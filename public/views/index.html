@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Weekend challenge 5</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/client.js" charset="utf-8"></script>
+    <script src="scripts/services/omdb-service.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="" ng-controller="movieController as mc">
+      <div class="jumbotron">
+        <h1>Weekend challenge 5</h1>
+      </div>
+      <div class="container search-bar">
+        <input type="text" ng-model="mc.searchBar" placeholder="Enter Title to Search...">
+        <button type="button" ng-click="mc.searchTitle(mc.searchBar)" class="btn btn-success">Search</button>
+      </div>
+      <div class="container col-sm-10 col-md-10 col-lg-10 col-xl-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xl-offset-1">
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4" ng-repeat="movie in mc.searchResults">
+          <div class="">
+            <img ng-src="{{ movie.Poster }}" class="movie-poster">
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+              <p class="movie-title">{{ movie.Title }}</p>
+              <p class="movie-year">{{ movie.Year }}</p>
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+              <p class="fav-text">Favorite</p>
+              <button type="button" class="btn btn-success" ng-click="mc.addFavorite( {{ movie }} )">Add Fav</button>
+              <button type="button" class="btn btn-danger" ng-click="mc.deleteFavorite( {{ movie }} )">Remove Fav</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

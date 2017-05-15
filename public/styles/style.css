@@ -1,0 +1,20 @@
+.jumbotron {
+  text-align: center;
+  background-color: tan !important;
+  font-family: cursive;
+  font-size: 64px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-shadow: 3px 3px 3px navy;
+  color: blue;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 600px;
+
+}
+
+.fav-text {
+  float: right;
+}
